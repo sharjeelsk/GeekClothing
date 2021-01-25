@@ -11,10 +11,16 @@ import {setCurrentUser} from './redux/user/user.actions'
 import {selectCurrentUser} from './redux/user/user.selectors'
 import {createStructuredSelector} from 'reselect'
 import CheckoutPage from './pages/checkout/checkout.component'
+
 class App extends React.Component {
 
  unsubscribeFromAuth = null
   componentDidMount(){
+
+
+
+
+
     const {setCurrentUser} = this.props
   this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth=>{ //on auth state change gives current signed in user to firebases create user profile function
     
@@ -50,7 +56,7 @@ componentWillUnmount(){
 }
 
 const mapStateToProps=createStructuredSelector({
-  currentUser:selectCurrentUser
+  currentUser:selectCurrentUser,
 })
 
 const mapDispatchToProps = (dispatch)=>{
@@ -59,4 +65,4 @@ return{
 }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps )(App); //1arg is mapstate to pros and second is 
+export default connect(mapStateToProps,mapDispatchToProps )(App); //1arg is mapstate to pros and second is //data is stored in authentication table
