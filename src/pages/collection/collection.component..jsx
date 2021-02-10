@@ -5,8 +5,7 @@ import {connect} from 'react-redux'
 import {selectCollection} from '../../redux/shop/shop.selector'
 
 const CollectionPage = ({collection}) => {
-    
-   const {title, items} = collection
+   const {title, items} = collection[0]
     return (
         <div className="collection-page">
             <h2 className="title"> {title}</h2>
